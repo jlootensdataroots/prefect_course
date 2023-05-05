@@ -1,0 +1,68 @@
+###
+### A complete description of a Prefect Deployment for flow 'meteo-flow'
+###
+name: deployment-docker
+description: null
+version: 1c5fe6bc0acaeafef58bd02a45ad9069
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: null
+tags: []
+parameters: {}
+schedule: null
+is_schedule_active: null
+infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: meteo-flow
+manifest_path: null
+infrastructure:
+  type: docker-container
+  env:
+    EXTRA_PIP_PACKAGES: httpx
+  labels: {}
+  name: null
+  command: null
+  image: prefecthq/prefect:2.8.7-python3.10
+  image_pull_policy: null
+  image_registry: null
+  networks: []
+  network_mode: null
+  auto_remove: true
+  volumes: []
+  stream_output: true
+  memswap_limit: null
+  mem_limit: null
+  privileged: false
+  _block_document_id: b2718e46-75b7-40df-a79b-1424660a95e8
+  _block_document_name: docker-block-prefect-training
+  _is_anonymous: false
+  block_type_slug: docker-container
+  _block_type_slug: docker-container
+storage: null
+path: /opt/prefect/flows
+entrypoint: flows.py:meteo_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    lon:
+      title: lon
+      default: 0
+      position: 0
+      type: number
+    lat:
+      title: lat
+      default: 0
+      position: 1
+      type: number
+    dt:
+      title: dt
+      position: 2
+      type: string
+      format: date-time
+  required: null
+  definitions: null
+timestamp: '2023-05-05T06:42:44.030857+00:00'

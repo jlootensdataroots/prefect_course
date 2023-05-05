@@ -1,0 +1,50 @@
+###
+### A complete description of a Prefect Deployment for flow 'meteoflow'
+###
+name: test_dployment
+description: null
+version: 764c6a0a288412f05003080eb7c6a94e
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: default-agent-pool
+tags: []
+parameters: {}
+schedule: null
+is_schedule_active: null
+infra_overrides: {}
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: meteoflow
+manifest_path: null
+storage: null
+path: /Users/johan/Documents/prefect_course_2023-03-27
+entrypoint: flowtest.py:meteoflow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    lon:
+      title: lon
+      default: 0
+      position: 0
+      type: number
+    lat:
+      title: lat
+      default: 0
+      position: 1
+      type: number
+  required: null
+  definitions: null
+timestamp: '2023-03-27T15:37:04.336670+00:00'
